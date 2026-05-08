@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="freeswitch/xml">
+  <section name="directory">
+    <domain name="tenant-123.sip.apntalk.test">
+      <params>
+        <param name="dial-string" value="{presence_id=${dialed_user}@${dialed_domain}}${sofia_contact(${dialed_user}@${dialed_domain})}"/>
+      </params>
+      <variables>
+        <variable name="domain_uuid" value="tenant-123"/>
+      </variables>
+      <users>
+        <user id="1001" cacheable="60000">
+          <params>
+            <param name="a1-hash" value="6d530e26cb7df746c4b675fb362f5764"/>
+            <param name="vm-password" value="1001"/>
+            <param name="caller-id-in-from" value="true"/>
+          </params>
+          <variables>
+            <variable name="user_context" value="tenant-123"/>
+            <variable name="effective_caller_id_name" value="Agent &amp; Reception"/>
+            <variable name="effective_caller_id_number" value="1001"/>
+          </variables>
+        </user>
+      </users>
+    </domain>
+  </section>
+</document>

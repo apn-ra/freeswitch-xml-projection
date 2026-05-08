@@ -1,0 +1,40 @@
+{
+  "name": "apntalk/freeswitch-xml-projection",
+  "description": "Standalone PHP package for rendering APNTalk SIP endpoint projections as FreeSWITCH mod_xml_curl directory XML.",
+  "type": "library",
+  "license": "proprietary",
+  "require": {
+    "php": "^8.2",
+    "ext-dom": "*",
+    "ext-libxml": "*",
+    "ext-xmlwriter": "*"
+  },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^3.64",
+    "phpstan/phpstan": "^2.1",
+    "phpunit/phpunit": "^11.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "APNTalk\\FreeSwitchXmlProjection\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "APNTalk\\FreeSwitchXmlProjection\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "test": "phpunit",
+    "analyse": "phpstan analyse src tests --level=max",
+    "cs": "php-cs-fixer fix --dry-run --diff --allow-risky=yes",
+    "cs:fix": "php-cs-fixer fix --allow-risky=yes",
+    "check": [
+      "@test",
+      "@analyse",
+      "@cs"
+    ]
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}
