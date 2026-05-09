@@ -42,7 +42,7 @@ composer require apntalk/freeswitch-xml-projection
 - `APNTalk\FreeSwitchXmlProjection\Security\Redactor`
 - `APNTalk\FreeSwitchXmlProjection\Security\SensitiveFieldList`
 
-See [docs/public-api.md](/home/ramjf/projects/freeswitch-xml-projection/docs/public-api.md) for the full surface.
+See [docs/public-api.md](/home/grimange/apn_projects/freeswitch-xml-projection/docs/public-api.md) for the full surface.
 
 ### Usage
 
@@ -88,10 +88,10 @@ echo (new DirectoryXmlRenderer())->render($document);
 - Never log rendered XML containing live credentials.
 - Basic auth, mTLS, IP allowlists, rate limits, and audit logging belong at APNTalk's HTTP edge, not in this package.
 
-See [docs/security.md](/home/ramjf/projects/freeswitch-xml-projection/docs/security.md).
+See [docs/security.md](/home/grimange/apn_projects/freeswitch-xml-projection/docs/security.md).
 
-### Release blocker
+### Fixture provenance
 
-Audit status as of `2026-05-08`: no real redacted FreeSWITCH `mod_xml_curl` directory `sip_auth` capture was found in this repository or local workspace during the release-readiness review.
+[tests/Fixture/Requests/real-directory-sip-auth-redacted.php](/home/grimange/apn_projects/freeswitch-xml-projection/tests/Fixture/Requests/real-directory-sip-auth-redacted.php) is based on a real redacted FreeSWITCH Docker `mod_xml_curl` directory `sip_auth` capture from `2026-05-09`.
 
-`v0.1.0` must not be tagged until [tests/Fixture/Requests/real-directory-sip-auth-redacted.php](/home/ramjf/projects/freeswitch-xml-projection/tests/Fixture/Requests/real-directory-sip-auth-redacted.php) is replaced with, or explicitly verified against, a real redacted FreeSWITCH `sip_auth` capture. See [docs/fixture-provenance.md](/home/ramjf/projects/freeswitch-xml-projection/docs/fixture-provenance.md).
+The capture used the repo-local Docker environment in [docker/docker-compose.yml](/home/grimange/apn_projects/freeswitch-xml-projection/docker/docker-compose.yml), service `lab01`, container `freeswitch`, host networking, and a temporary local capture endpoint outside the repository. See [docs/fixture-provenance.md](/home/grimange/apn_projects/freeswitch-xml-projection/docs/fixture-provenance.md).

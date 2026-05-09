@@ -140,9 +140,14 @@ final class XmlCurlRequestParserTest extends TestCase
     public function testItMapsFreeSwitchHostname(): void
     {
         self::assertSame(
-            'fs-edge-01.apntalk.test',
+            'DESKTOP-PC01',
             $this->parseFixture('real-directory-sip-auth-redacted')->freeSwitchHostname(),
         );
+    }
+
+    public function testItMapsRealSipProfileAlias(): void
+    {
+        self::assertSame('internal', $this->parseFixture('real-directory-sip-auth-redacted')->profile());
     }
 
     public function testItReturnsNullForUnknownEnumValues(): void

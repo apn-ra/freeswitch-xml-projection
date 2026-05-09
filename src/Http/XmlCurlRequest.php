@@ -66,7 +66,7 @@ final readonly class XmlCurlRequest
 
     public function profile(): ?string
     {
-        return $this->normalized['profile'] ?? null;
+        return $this->normalized['profile'] ?? $this->normalized['sip_profile'] ?? null;
     }
 
     public function ip(): ?string

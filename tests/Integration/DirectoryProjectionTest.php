@@ -36,11 +36,14 @@ final class DirectoryProjectionTest extends TestCase
 
         self::assertTrue($request->isDirectory());
         self::assertSame('1001', $request->user());
-        self::assertSame('tenant-123.sip.apntalk.test', $request->domain());
-        self::assertSame('fs-edge-01.apntalk.test', $request->freeSwitchHostname());
-        self::assertSame('Synthetic SIP UA 1.0', $request->sipUserAgent());
-        self::assertSame('[redacted]', $request->redacted()['Authorization']);
+        self::assertSame('172.21.204.105', $request->domain());
+        self::assertSame('DESKTOP-PC01', $request->freeSwitchHostname());
+        self::assertSame('internal', $request->profile());
+        self::assertSame('apntalk-fixture-capture/0.1', $request->sipUserAgent());
+        self::assertSame('[redacted]', $request->redacted()['sip_auth_response']);
+        self::assertSame('[redacted]', $request->redacted()['sip_auth_nonce']);
         self::assertSame('sip_auth', $request->raw()['action']);
+        self::assertSame('sofia_reg_parse_auth', $request->raw()['Event-Calling-Function']);
     }
 
     public function testItRendersFixtureStableDirectoryXmlForA1HashCredential(): void

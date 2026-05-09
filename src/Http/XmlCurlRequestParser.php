@@ -20,6 +20,7 @@ final readonly class XmlCurlRequestParser
         'user',
         'domain',
         'profile',
+        'sip_profile',
         'ip',
         'hostname',
         'FreeSWITCH-Hostname',
