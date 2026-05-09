@@ -95,3 +95,13 @@ See [docs/security.md](docs/security.md).
 [tests/Fixture/Requests/real-directory-sip-auth-redacted.php](tests/Fixture/Requests/real-directory-sip-auth-redacted.php) is based on a real redacted FreeSWITCH Docker `mod_xml_curl` directory `sip_auth` capture from `2026-05-09`.
 
 The capture used a local Docker lab with service `lab01`, container `freeswitch`, host networking, and a temporary local capture endpoint outside the repository. The full local `docker/` lab is ignored to avoid committing logs and generated FreeSWITCH state; the sanitized capture evidence is tracked in [docs/docker-capture-evidence.md](docs/docker-capture-evidence.md). See [docs/fixture-provenance.md](docs/fixture-provenance.md).
+
+### Live smoke
+
+An opt-in live Docker FreeSWITCH smoke harness is available for operators who have the local lab. It is not part of normal CI or `composer check`.
+
+```bash
+FREESWITCH_XML_PROJECTION_LIVE_SMOKE=1 composer live:smoke
+```
+
+See [docs/live-smoke.md](docs/live-smoke.md).
