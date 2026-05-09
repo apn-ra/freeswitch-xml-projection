@@ -1,9 +1,9 @@
 # Fixture provenance
 
-- [tests/Fixture/Requests/directory-sip-auth-minimal.php](/home/grimange/apn_projects/freeswitch-xml-projection/tests/Fixture/Requests/directory-sip-auth-minimal.php) is synthetic and intentionally minimal.
-- [tests/Fixture/Requests/directory-gateways.php](/home/grimange/apn_projects/freeswitch-xml-projection/tests/Fixture/Requests/directory-gateways.php) is synthetic and covers deferred request parsing.
-- [tests/Fixture/Requests/reverse-auth-lookup.php](/home/grimange/apn_projects/freeswitch-xml-projection/tests/Fixture/Requests/reverse-auth-lookup.php) is synthetic and covers deferred request parsing.
-- [tests/Fixture/Requests/real-directory-sip-auth-redacted.php](/home/grimange/apn_projects/freeswitch-xml-projection/tests/Fixture/Requests/real-directory-sip-auth-redacted.php) is a real redacted FreeSWITCH Docker `mod_xml_curl` directory `sip_auth` capture.
+- [tests/Fixture/Requests/directory-sip-auth-minimal.php](../tests/Fixture/Requests/directory-sip-auth-minimal.php) is synthetic and intentionally minimal.
+- [tests/Fixture/Requests/directory-gateways.php](../tests/Fixture/Requests/directory-gateways.php) is synthetic and covers deferred request parsing.
+- [tests/Fixture/Requests/reverse-auth-lookup.php](../tests/Fixture/Requests/reverse-auth-lookup.php) is synthetic and covers deferred request parsing.
+- [tests/Fixture/Requests/real-directory-sip-auth-redacted.php](../tests/Fixture/Requests/real-directory-sip-auth-redacted.php) is a real redacted FreeSWITCH Docker `mod_xml_curl` directory `sip_auth` capture.
 
 ## Real sip_auth capture
 
@@ -11,12 +11,14 @@ Capture date: `2026-05-09`
 
 Docker environment:
 
-- Compose file: [docker/docker-compose.yml](/home/grimange/apn_projects/freeswitch-xml-projection/docker/docker-compose.yml)
+- Local lab evidence: [docs/docker-capture-evidence.md](docker-capture-evidence.md)
 - Service: `lab01`
 - Container: `freeswitch`
 - Network mode: `host`
-- Config mount: `docker/freeswitch/conf` to `/usr/local/freeswitch/conf`
-- Temporary config file: `docker/freeswitch/conf/autoload_configs/xml_curl.conf.xml`
+- Config mount in the local ignored lab: `docker/freeswitch/conf` to `/usr/local/freeswitch/conf`
+- Temporary config file in the local ignored lab: `docker/freeswitch/conf/autoload_configs/xml_curl.conf.xml`
+
+The full local `docker/` lab directory is intentionally ignored by git because it contains FreeSWITCH logs, recordings, generated `freeswitch.xml.fsxml`, and local runtime state. The tracked release evidence is the sanitized capture transcript in [docs/docker-capture-evidence.md](docker-capture-evidence.md), plus the redacted request fixture.
 
 FreeSWITCH details:
 

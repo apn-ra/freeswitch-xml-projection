@@ -42,7 +42,7 @@ composer require apntalk/freeswitch-xml-projection
 - `APNTalk\FreeSwitchXmlProjection\Security\Redactor`
 - `APNTalk\FreeSwitchXmlProjection\Security\SensitiveFieldList`
 
-See [docs/public-api.md](/home/grimange/apn_projects/freeswitch-xml-projection/docs/public-api.md) for the full surface.
+See [docs/public-api.md](docs/public-api.md) for the full surface.
 
 ### Usage
 
@@ -88,10 +88,10 @@ echo (new DirectoryXmlRenderer())->render($document);
 - Never log rendered XML containing live credentials.
 - Basic auth, mTLS, IP allowlists, rate limits, and audit logging belong at APNTalk's HTTP edge, not in this package.
 
-See [docs/security.md](/home/grimange/apn_projects/freeswitch-xml-projection/docs/security.md).
+See [docs/security.md](docs/security.md).
 
 ### Fixture provenance
 
-[tests/Fixture/Requests/real-directory-sip-auth-redacted.php](/home/grimange/apn_projects/freeswitch-xml-projection/tests/Fixture/Requests/real-directory-sip-auth-redacted.php) is based on a real redacted FreeSWITCH Docker `mod_xml_curl` directory `sip_auth` capture from `2026-05-09`.
+[tests/Fixture/Requests/real-directory-sip-auth-redacted.php](tests/Fixture/Requests/real-directory-sip-auth-redacted.php) is based on a real redacted FreeSWITCH Docker `mod_xml_curl` directory `sip_auth` capture from `2026-05-09`.
 
-The capture used the repo-local Docker environment in [docker/docker-compose.yml](/home/grimange/apn_projects/freeswitch-xml-projection/docker/docker-compose.yml), service `lab01`, container `freeswitch`, host networking, and a temporary local capture endpoint outside the repository. See [docs/fixture-provenance.md](/home/grimange/apn_projects/freeswitch-xml-projection/docs/fixture-provenance.md).
+The capture used a local Docker lab with service `lab01`, container `freeswitch`, host networking, and a temporary local capture endpoint outside the repository. The full local `docker/` lab is ignored to avoid committing logs and generated FreeSWITCH state; the sanitized capture evidence is tracked in [docs/docker-capture-evidence.md](docs/docker-capture-evidence.md). See [docs/fixture-provenance.md](docs/fixture-provenance.md).

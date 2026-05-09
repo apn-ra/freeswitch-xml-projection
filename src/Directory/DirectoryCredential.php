@@ -6,12 +6,12 @@ namespace APNTalk\FreeSwitchXmlProjection\Directory;
 
 use APNTalk\FreeSwitchXmlProjection\Enum\CredentialMode;
 
-abstract class DirectoryCredential
+interface DirectoryCredential
 {
     /**
      * @return list<DirectoryParam>
      */
-    abstract public function toParams(): array;
+    public function toParams(): array;
 
-    abstract public function mode(): CredentialMode;
+    public function mode(): CredentialMode;
 }

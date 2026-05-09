@@ -7,7 +7,7 @@ namespace APNTalk\FreeSwitchXmlProjection\Directory;
 use APNTalk\FreeSwitchXmlProjection\Enum\CredentialMode;
 use APNTalk\FreeSwitchXmlProjection\Internal\XmlValueValidator;
 
-final class PlainPasswordCredential extends DirectoryCredential
+final class PlainPasswordCredential implements DirectoryCredential
 {
     private readonly string $password;
 

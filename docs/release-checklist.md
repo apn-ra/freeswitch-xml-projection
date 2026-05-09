@@ -3,7 +3,7 @@
 - `composer validate --strict`
 - `composer install --prefer-dist --no-progress`
 - `composer check`
-- Confirm [tests/Fixture/Requests/real-directory-sip-auth-redacted.php](/home/grimange/apn_projects/freeswitch-xml-projection/tests/Fixture/Requests/real-directory-sip-auth-redacted.php) remains based on the real redacted FreeSWITCH Docker `mod_xml_curl` directory `sip_auth` capture documented in [docs/fixture-provenance.md](/home/grimange/apn_projects/freeswitch-xml-projection/docs/fixture-provenance.md).
+- Confirm [tests/Fixture/Requests/real-directory-sip-auth-redacted.php](../tests/Fixture/Requests/real-directory-sip-auth-redacted.php) remains based on the real redacted FreeSWITCH Docker `mod_xml_curl` directory `sip_auth` capture documented in [docs/fixture-provenance.md](fixture-provenance.md).
 - Confirm docs still state that APNTalk owns authority and that this package owns only XML projection.
 - Confirm no live credentials appear in fixtures, examples, tests, or docs.
 - Confirm no temporary Docker capture config is committed under `docker/freeswitch/conf/autoload_configs/xml_curl.conf.xml`.

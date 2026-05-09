@@ -7,7 +7,7 @@ namespace APNTalk\FreeSwitchXmlProjection\Directory;
 use APNTalk\FreeSwitchXmlProjection\Enum\CredentialMode;
 use APNTalk\FreeSwitchXmlProjection\Internal\XmlValueValidator;
 
-final class A1HashCredential extends DirectoryCredential
+final class A1HashCredential implements DirectoryCredential
 {
     private readonly string $hash;
 
