@@ -10,7 +10,10 @@
       <directory>tests/Integration</directory>
     </testsuite>
     <testsuite name="live">
-      <directory>tests/Live</directory>
+      <file>tests/Live/FreeSwitchXmlCurlLiveSmokeTest.php</file>
+    </testsuite>
+    <testsuite name="chaos">
+      <file>tests/Live/FreeSwitchXmlCurlChaosSmokeTest.php</file>
     </testsuite>
   </testsuites>
   <source>

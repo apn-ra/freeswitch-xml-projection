@@ -27,10 +27,12 @@
   "scripts": {
     "test": "phpunit --testsuite default",
     "test:live": "FREESWITCH_XML_PROJECTION_LIVE_SMOKE=1 phpunit --testsuite live",
+    "test:chaos": "FREESWITCH_XML_PROJECTION_CHAOS_SMOKE=1 phpunit --testsuite chaos",
     "analyse": "phpstan analyse src tests --level=max",
     "cs": "php-cs-fixer fix --dry-run --diff --allow-risky=yes",
     "cs:fix": "php-cs-fixer fix --allow-risky=yes",
     "live:smoke": "php tools/live-smoke/run-live-smoke.php",
+    "chaos:smoke": "php tools/chaos-smoke/run-chaos-smoke.php",
     "check": [
       "@test",
       "@analyse",

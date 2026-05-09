@@ -105,3 +105,13 @@ FREESWITCH_XML_PROJECTION_LIVE_SMOKE=1 composer live:smoke
 ```
 
 See [docs/live-smoke.md](docs/live-smoke.md).
+
+### Chaos smoke
+
+An opt-in Docker FreeSWITCH chaos harness is available for controlled local failure-mode validation. It is not part of normal CI or `composer check`.
+
+```bash
+FREESWITCH_XML_PROJECTION_CHAOS_SMOKE=1 composer chaos:smoke
+```
+
+See [docs/chaos-smoke.md](docs/chaos-smoke.md).
